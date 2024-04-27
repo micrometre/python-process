@@ -33,7 +33,7 @@ remove:
 
 
 post:
-	bash -xv scripts/watch-post.sh
+	bash  scripts/watch-post.sh
 
 watch:
 	inotifywait -m static/alprd1_images/ -r -e close_write --format '%w%f'

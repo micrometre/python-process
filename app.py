@@ -20,7 +20,7 @@ def alprd():
 
 @app.route("/watch", methods=["POST"])
 def watch():
-    data = request.get_json(force=True)
+    data = request.get_data()
     print(data)
     return(data)
 
