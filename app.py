@@ -14,19 +14,19 @@ def alprd():
     alpr_results = data["results"]
     alpr_uuid = data["uuid"]
     alpr_plate = alpr_results[0]["plate"]
-    print(alpr_uuid)
+    print(alpr_uuid, alpr_plate)
     return("alprd")
 
 
 @app.route("/watch", methods=["POST"])
 def watch():
     data = request.get_data()
-    alprd_img = ("{}".format(data))
-    a = json.dumps(alprd_img)
+    alprd_img_res = ("{}".format(data))
+    a = json.dumps(alprd_img_res)
     b = json.loads(a)
     c = b[2:][:-1]
-    
-    print(c)
+    alpr_img = ("http://192.168.1.122:5000/{}".format(c))
+    print(alpr_img)
     return("22")
 
 @app.route("/video")
