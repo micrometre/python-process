@@ -1,4 +1,4 @@
-from flask import Flask, render_template, Response, request, jsonify, redirect, url_for, send_file
+from flask import Flask, render_template, Response, json, request, jsonify, redirect, url_for, send_file
 
 app = Flask(__name__, static_url_path='/static')
 
@@ -21,8 +21,13 @@ def alprd():
 @app.route("/watch", methods=["POST"])
 def watch():
     data = request.get_data()
-    print(data)
-    return(data)
+    alprd_img = ("{}".format(data))
+    a = json.dumps(alprd_img)
+    b = json.loads(a)
+    c = b[2:][:-1]
+    
+    print(c)
+    return("22")
 
 @app.route("/video")
 def video():
