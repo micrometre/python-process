@@ -1,0 +1,10 @@
+# docker-compose.yml
+version: '3.8'
+
+services:
+  alpr_upload:
+    build: ./openalpr-upload
+    container_name: alprd-uplaod
+    user: root
+    volumes:
+      - ./static/alprd1_images:/var/lib/openalpr/plateimages      
